@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+
+	<body>
+        <section id='container'>
+            <h1>Let's Play Trivia!</h1>
+            <div id='points'>Total points: 100</div>
+            <div id='topics-wager-container'>
+                <div id='topics'>
+                    <button id='sports' class='topics'>Sports</button>
+                    <button id='history' class='topics'>History</button>
+                    <button id='technology' class='topics'>Technology</button>
+                    <button id='music' class='topics'>Music</button>
+                    <button id='movies' class='topics'>Movies</button>
+                </div>
+                <form id='input-form' autocomplete='off'>
+                    <input id='wager' type='text' name='wager' placeholder='Wager amount'>
+                </form>
+            </div>
+            <div id='question-answer-box' class='inactive'>
+                <div id='questions'>Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here :</div>
+                <div id='answers'>
+                    <ul>
+                        <li>Answers</li>
+                        <li>will</li>
+                        <li>go</li>
+                        <li>here.</li>
+                    </ul>
+                </div>
+                <div id=buttons>
+                    <div id='submit-button'>
+                        <button class='button' id='submit' type='button' name='submit'>Submit</button>
+                    </div>
+                    <div id='skip-button'>
+                        <button class='button' id='skip' type='button' name='skip'>Skip</button>
+                    </div>
+                </div>
+            </div>
+            <div id='result-container' class='inactive'>
+                <div id='result'>CORRECT!</div>
+                <button class='button' id='next' type='button' name='next'>Next</button>
+            </div>
+        </section>
+        <script src='script.js'></script>
+	</body>
+</html>

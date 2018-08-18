@@ -1,0 +1,103 @@
+body, html {
+    background-color: white;
+    height: 100%;
+    margin: auto;
+    display: flex;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: lightsalmon;
+    height: 600px;
+    width: 800px;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 5px 5px 8px lightseagreen;
+}
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(21, 100, 55);
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+#points {
+    position: relative;
+}
+.inactive {
+    visibility: hidden;
+}
+#topics-wager-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+#topics {
+    display: flex;
+    align-content: space-between;
+    height: 15%;
+}
+form {
+    margin-top: 25px;
+}
+
+.topics {
+    background-color: lightblue;
+    margin: auto;
+    padding: 18px 25px;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+.topics:hover {
+    cursor: pointer;
+}
+#wager {
+    display: flex;
+    border-radius: 4px;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 25px;
+    padding-left: 5px;
+    border: 0;
+    background-color: lightcyan;
+}
+#buttons {
+    display: flex;
+}
+.button {
+    background-color: lightblue;
+    width: 90px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+.button:hover {
+    cursor: pointer;
+}
+#question-answer-box {
+    font-family: Helvetica, sans-serif;
+    background-color: aliceblue;
+    margin: auto;
+    height: 55%;
+    width: 90%;
+    border-radius: 5px;
+    color: darkslategray;
+}
+#result-container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+    background-color: lightcyan;
+    border-radius: 20px;
+    text-align: center;
+}
+#result {
+    width: 100%;
+    margin: auto;
+    font-size: 2em;
+}
+#next {
+    margin: auto;
+}
