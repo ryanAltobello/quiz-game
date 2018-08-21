@@ -58,6 +58,9 @@ h1 {
     border-radius: 5px;
     text-align: center;
 }
+.hover:hover {
+    cursor: pointer;
+}
 .select {
     border: 2px solid blue;
     background-color: white;
