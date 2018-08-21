@@ -12,26 +12,35 @@
             <div id='points'>Total points: 100</div>
             <div id='topics-wager-container'>
                 <div id='topics'>
-                    <button id='sports' class='topics'>Sports</button>
-                    <button id='history' class='topics'>History</button>
-                    <button id='technology' class='topics'>Technology</button>
-                    <button id='music' class='topics'>Music</button>
-                    <button id='movies' class='topics'>Movies</button>
+                    <div id='sports' class='topics'>Sports</div>
+                    <div id='history' class='topics'>History</div>
+                    <div id='technology' class='topics'>Technology</div>
+                    <div id='music' class='topics'>Music</div>
+                    <div id='movies' class='topics'>Movies</div>
                 </div>
                 <form id='input-form' autocomplete='off'>
-                    <input id='wager' type='text' name='wager' placeholder='Wager amount'>
+                    <input id='wager' type='number' min='1' Sname='wager' placeholder='Enter your wager amount'>
+                    <button class='button' id='bet' type='button'>Bet!</button>
                 </form>
             </div>
             <div id='question-answer-box' class='inactive'>
+                <h2 id='question-number'></h2>
                 <div id='questions'>Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here Question Here :</div>
-                <div id='answers'>
-                    <ul>
-                        <li>Answers</li>
-                        <li>will</li>
-                        <li>go</li>
-                        <li>here.</li>
-                    </ul>
-                </div>
+                <form id='answer-list'>
+                    <div class='answer-set-0'>
+                        <input type='radio' id='answer-0' value='0' name='answers'>
+                        <label for='answer-0' id='choice-0'></label>
+                    </div>
+                    <div class='answer-set-1'>
+                        <input type='radio' id='answer-1' value='1' name='answers'>
+                        <label for='answer-1' id='choice-1'></label>
+                    </div>
+                    <div class='answer-set-2'>
+                        <input type='radio' id='answer-2' value='2' name='answers'>
+                        <label for='answer-2' id='choice-2'></label>
+                    </div>
+                </form>
+
                 <div id=buttons>
                     <div id='submit-button'>
                         <button class='button' id='submit' type='button' name='submit'>Submit</button>
@@ -42,7 +51,7 @@
                 </div>
             </div>
             <div id='result-container' class='inactive'>
-                <div id='result'>CORRECT!</div>
+                <div id='result'></div>
                 <button class='button' id='next' type='button' name='next'>Next</button>
             </div>
         </section>

@@ -1,4 +1,5 @@
 /*
+
 var inputOutput = (function() {
 
     return {
@@ -36,6 +37,7 @@ var calculations = (function() {
 
 
 var controller = (function(inCon, calc) {
+    var elements = inCon.getElementIDs;
 
     var eventListeners = function() {
         document.getElementById('submit-button').addEventListener('click', function() {
@@ -82,46 +84,129 @@ var controller = (function(inCon, calc) {
 controller.init();
 
 */
-var controller = (function() {
 
-    var changeClass = function() {
-        document.getElementById('topics').addEventListener('click', function() {
-            activateAnswers();
-        });
-        document.getElementById('submit').addEventListener('click', function() {
-            activateResult();
-        });
-        document.getElementById('next').addEventListener('click', function() {
-            activateNext();
-        });
-        document.getElementById('skip').addEventListener('click', function() {
-            activateAnswers();
-        });
-    }
 
-    var activateAnswers = function() {
-        document.getElementById('topics-wager-container').classList.toggle('inactive');
-        document.getElementById('question-answer-box').classList.toggle('inactive');
-    }
 
-    var activateResult = function() {
-        document.getElementById('result-container').classList.toggle('inactive');
-        document.getElementById('question-answer-box').classList.toggle('inactive');
-    }
+var totalPoints = 100;
+var count = 1;
 
-    var activateNext = function() {
-        document.getElementById('topics-wager-container').classList.toggle('inactive');
-        document.getElementById('result-container').classList.toggle('inactive');
+var questions = [{
+    question: 'Where are the Cubs?',
+    answers: ['Chicago', 'New York', 'Miami'],
+    correct: 0,
+    category: 'sports'
+    }, {
+    question: 'Where are the Saints?',
+    answers: ['Chicago', 'London', 'New Orleans'],
+    correct: 2,
+    category: 'sports'
+    }, {
+    question: 'The Laws of Thermodynamics were invented by whom?',
+    answers: ['Newton', 'Tesla', 'Galileo'],
+    correct: 0,
+    category: 'history'
+    }, {
+    question: 'What was the name of the famous ship Darwin rode to Galapagos Islands?',
+    answers: ['SS Darwin', 'HMS Beagle', 'RMS Joseph'],
+    correct: 1,
+    category: 'history'
     }
-    return {
-        init: function() {
-            changeClass();
+];
+
+
+function getWager() {
+    wagerAmount = parseInt(document.getElementById('wager').value);
+    return wagerAmount;
+}
+
+function removeWager() {
+    document.getElementById('input-form').reset();
+}
+function clearAnswers() {
+    document.getElementById('answer-list').reset();
+}
+
+function eventListeners() {
+    document.getElementById('bet').addEventListener('click', function() {
+        if (!isNaN(getWager())) {
+            getQuestion();
         }
-    };
-})();
+    });
 
-controller.init();
+    document.getElementById('submit').addEventListener('click', function() {
+        checkAnswer();
+        activateResult();
+    });
 
+    document.getElementById('next').addEventListener('click', function() {
+        clearAnswers();
+        removeWager();
+        activateNext();
+    });
 
+    document.getElementById('skip').addEventListener('click', function() {
+        clearAnswers();
+        removeWager();
+        activateAnswers();
+    });
+} 
 
+function activateAnswers() {
+    if (count < 4) {
+        document.getElementById('bet').classList.toggle('inactive');
+        document.getElementById('question-answer-box').classList.toggle('inactive');
+    } else {
+        gameOver();
+    }
+}
+
+function activateResult() {
+    document.getElementById('result-container').classList.toggle('inactive');
+    document.getElementById('question-answer-box').classList.toggle('inactive');
+}
+
+function activateNext() {
+    if (count < 4) {
+        document.getElementById('bet').classList.toggle('inactive');
+        document.getElementById('result-container').classList.toggle('inactive');
+    } else {
+        gameOver();
+    }
+}
+
+function getQuestion() {    
+    randInt = Math.floor(Math.random() * questions.length);
+    randomQuestion = questions[randInt];
+    document.getElementById('question-number').textContent = 'Question ' + count + '/4';
+    document.getElementById('questions').textContent = randomQuestion.question;
+    document.getElementById('choice-0').textContent = randomQuestion.answers[0];
+    document.getElementById('choice-1').textContent = randomQuestion.answers[1];
+    document.getElementById('choice-2').textContent = randomQuestion.answers[2];
+    questions.splice(randInt, 1);
+    if (count === 4) {
+        gameOver();
+    } else {
+        activateAnswers();
+        count++;
+    }
+}
+
+function checkAnswer() {
+    wager = getWager();
+    if (document.getElementById('answer-' + randomQuestion.correct).checked) {
+        document.getElementById('result').textContent = 'CORRECT!';
+        totalPoints += wager;
+        document.getElementById('points').textContent = 'Total points: ' + totalPoints;
+    } else {
+        document.getElementById('result').textContent = 'WRONG!';
+    }
+}
+
+function gameOver() {
+    document.getElementById('result-container').classList.remove('inactive');
+    document.getElementById('question-answer-box').classList.add('inactive');
+    document.getElementById('result').textContent = 'Game Over! You scored ' + totalPoints + ' points!'
+}
+
+eventListeners();
 
