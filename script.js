@@ -36,7 +36,7 @@ var questions = [{
         }
     ]}, {
     history: [{
-        question: 'The Laws of Thermodynamics were invented by whom?',
+        question: 'The Laws of Motion were invented by whom?',
         answers: ['Newton', 'Tesla', 'Galileo'],
         correct: 0,
         }, {
