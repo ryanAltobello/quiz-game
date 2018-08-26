@@ -30,12 +30,13 @@ h1 {
     background-color: lightcyan;
     padding: 10px 20px;
     border-radius: 2px;
-
 }
 .inactive {
     visibility: hidden;
 }
-
+.no-display {
+    display: none;
+}
 #topics-wager-container {
     display: flex;
     flex-direction: column;
@@ -92,6 +93,33 @@ h1 {
 .button:hover {
     cursor: pointer;
 }
+#intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, sans-serif;
+    width: 700px;
+    height: 400px;
+    background-color: white;
+    margin: 100px 0 0 50px;
+    font-size: 1.2em;
+    line-height: 1.4;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px lightseagreen;
+}
+#intro h2 {
+    margin: 20px 0 0 15px;
+}
+#intro li {
+    padding-right: 20px;
+    margin-top: 10px;
+}
+#ok {
+    position: absolute;
+    font-size: 1.2em;
+    margin-top: 330px;
+    margin-left: 570px;
+}
 #question-answer-box {
     font-family: Helvetica, sans-serif;
     background-color: aliceblue;
@@ -102,6 +130,25 @@ h1 {
     color: darkslategray;
     padding-left: 20px;
 }
+#questions {
+    padding-bottom: 15px;
+}
+#answer-list {
+    padding-bottom: 20px;
+    line-height: 1.7;
+    width: 300px;
+}
+.answers:hover {
+    cursor: pointer;
+}
+#buttons {
+    display: flex;
+    width: 225px;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
 #result-container {
     display: flex;
     position: absolute;
@@ -119,6 +166,9 @@ h1 {
     margin: auto;
     font-size: 2em;
 }
-#next, #new-game {
+#next {
+    margin: auto;
+}
+#new-game {
     margin: auto;
 }
