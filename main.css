@@ -5,7 +5,6 @@ body, html {
     display: flex;
 }
 #container {
-    position: relative;
     display: flex;
     flex-direction: column;
     background-color: lightsalmon;
@@ -95,7 +94,6 @@ h1 {
     cursor: pointer;
 }
 #intro {
-    position: absolute;
     display: flex;
     flex-direction: column;
     font-family: Helvetica, sans-serif;
