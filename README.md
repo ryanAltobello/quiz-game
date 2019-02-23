@@ -1,3 +1,3 @@
 Javascript Quiz Game
 
-[Live Example](https://ryanaltobello.github.io/quiz-game/)
+[Live App](https://ryanaltobello.github.io/quiz-game/)
