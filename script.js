@@ -1,30 +1,4 @@
 
-/*
-var questions = [{
-    question: 'Where are the Cubs?',
-    answers: ['Chicago', 'New York', 'Miami'],
-    correct: 0,
-    category: 'sports'
-    }, {
-    question: 'Where are the Saints?',
-    answers: ['Chicago', 'London', 'New Orleans'],
-    correct: 2,
-    category: 'sports'
-    }, {
-    question: 'The Laws of Thermodynamics were invented by whom?',
-    answers: ['Newton', 'Tesla', 'Galileo'],
-    correct: 0,
-    category: 'history'
-    }, {
-    question: 'What was the name of the famous ship Darwin rode to Galapagos Islands?',
-    answers: ['SS Darwin', 'HMS Beagle', 'RMS Joseph'],
-    correct: 1,
-    category: 'history'
-    }
-];
-*/
-
-
 var questions, totalPoints, count, topicList;
 
 init();
