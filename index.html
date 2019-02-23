@@ -1,82 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="main.css">
-	</head>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
 
-	<body>
-        <section id='container'>
-	    <div id='intro'>
-                <h2>Instructions:</h2>
-                <ul>
-                    <li>For each turn you must select a category and place a wager</li>
-                    <li>Your wager must be greater than 0 and less than your Total Points, in the top right.</li>
-                    <li>There are 3 questions in each category, and once you've answered all 3, you can no longer answer questions from that category.</li>
-                    <li>You may skip any question you do not know, however, you will lose the amount of points you have wagered for that question.</li>
-                    <li>You start with 100 points.</li>
-                    <li>Enjoy!</li>
-                </ul>
-                <button id='ok' class='button'>OK!</button>
+  <body>
+    <section id="container">
+      <div id="intro">
+        <h2>Instructions:</h2>
+        <ul>
+          <li>For each turn you must select a category and place a wager</li>
+          <li>
+            Your wager must be greater than 0 and less than your Total Points,
+            in the top right.
+          </li>
+          <li>
+            There are 3 questions in each category, and once you've answered all
+            3, you can no longer answer questions from that category.
+          </li>
+          <li>
+            You may skip any question you do not know, however, you will lose
+            the amount of points you have wagered for that question.
+          </li>
+          <li>You start with 100 points.</li>
+          <li>Enjoy!</li>
+        </ul>
+        <button id="ok" class="button">OK!</button>
+      </div>
+      <div id="title-bar">
+        <h1>Let's Play Trivia!</h1>
+      </div>
+      <div id="points">Total points: 100</div>
+      <div id="quiz-content">
+        <div id="topics-wager-container">
+          <div id="topics">
+            <button id="technology" class="topics hover"></button>
+            <button id="sports" class="topics hover"></button>
+            <button id="history" class="topics hover"></button>
+            <button id="music" class="topics hover"></button>
+            <button id="movies" class="topics hover"></button>
+          </div>
+          <form id="input-form" autocomplete="off">
+            <input
+              id="wager"
+              type="number"
+              min="1"
+              Sname="wager"
+              placeholder="Enter your wager amount"
+            />
+            <button class="button" id="bet" type="button">Bet!</button>
+          </form>
+        </div>
+
+        <div id="question-answer-box" class="inactive">
+          <h2 id="question-number"></h2>
+          <div id="questions"></div>
+          <form id="answer-list">
+            <div class="answer-set">
+              <input
+                type="radio"
+                id="answer-0"
+                value="0"
+                name="answers"
+                class="answers"
+              />
+              <label for="answer-0" id="choice-0" class="answers"></label>
             </div>
-	    <div id="title-bar">
-            	<h1>Let's Play Trivia!</h1>
-            	<div id='points'>Total points: 100</div>
-	    </div>
-	    <div id='quiz-content'>
-		    <div id='topics-wager-container'>
-			<div id='topics'>
-			    <button id='sports' class='topics hover'></button>
-			    <button id='history' class='topics hover'></button>
-			    <button id='technology' class='topics hover'></button>
-			    <button id='music' class='topics hover'></button>
-			    <button id='movies' class='topics hover'></button>
-			</div>
-			<form id='input-form' autocomplete='off'>
-			    <input id='wager' type='number' min='1' Sname='wager' placeholder='Enter your wager amount'>
-			    <button class='button' id='bet' type='button'>Bet!</button>
-			</form>
-		    </div>
-
-		    <div id='question-answer-box' class='inactive'>
-			<h2 id='question-number'></h2>
-			<div id='questions'></div>
-			<form id='answer-list'>
-			    <div class='answer-set'>
-				<input type='radio' id='answer-0' value='0' name='answers' class='answers'>
-				<label for='answer-0' id='choice-0' class='answers'></label>
-			    </div>
-			    <div class='answer-set'>
-				<input type='radio' id='answer-1' value='1' name='answers' class='answers'>
-				<label for='answer-1' id='choice-1' class='answers'></label>
-			    </div>
-			    <div class='answer-set'>
-				<input type='radio' id='answer-2' value='2' name='answers' class='answers'>
-				<label for='answer-2' id='choice-2' class='answers'></label>
-			    </div>
-			    <div class='answer-set'>
-				<input type='radio' id='answer-3' value='3' name='answers' class='answers'>
-				<label for='answer-3' id='choice-3' class='answers'></label>
-			    </div>
-			</form>
-
-			<div id=buttons>
-			    <div id='submit-button' class='submit-skip'>
-				<button class='button' id='submit' type='button' name='submit'>Submit</button>
-			    </div>
-			    <div id='skip-button' class='submit-skip'>
-				<button class='button' id='skip' type='button' name='skip'>Skip</button>
-			    </div>
-			</div>
-		    </div>
-	    </div>
-            <div id='result-container' class='inactive'>
-                <div id='result'></div>
-                <button class='button' id='next' type='button' name='next'>Next</button>
-                <button class='button no-display' id='new-game' type='button' name='new-game'>New Game</button>
+            <div class="answer-set">
+              <input
+                type="radio"
+                id="answer-1"
+                value="1"
+                name="answers"
+                class="answers"
+              />
+              <label for="answer-1" id="choice-1" class="answers"></label>
             </div>
-        </section>
-        <script src='script.js'></script>
-	</body>
+            <div class="answer-set">
+              <input
+                type="radio"
+                id="answer-2"
+                value="2"
+                name="answers"
+                class="answers"
+              />
+              <label for="answer-2" id="choice-2" class="answers"></label>
+            </div>
+            <div class="answer-set">
+              <input
+                type="radio"
+                id="answer-3"
+                value="3"
+                name="answers"
+                class="answers"
+              />
+              <label for="answer-3" id="choice-3" class="answers"></label>
+            </div>
+          </form>
+
+          <div id="buttons">
+            <div id="submit-button" class="submit-skip">
+              <button class="button" id="submit" type="button" name="submit">
+                Submit
+              </button>
+            </div>
+            <div id="skip-button" class="submit-skip">
+              <button class="button" id="skip" type="button" name="skip">
+                Skip
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="result-container" class="inactive">
+        <div id="result"></div>
+        <button class="button" id="next" type="button" name="next">Next</button>
+        <button
+          class="button no-display"
+          id="new-game"
+          type="button"
+          name="new-game"
+        >
+          New Game
+        </button>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
