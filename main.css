@@ -14,6 +14,9 @@ body, html {
     margin: auto;
     box-shadow: 5px 5px 8px lightseagreen;
 }
+#title-bar {
+    display: flex;
+}
 h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(2, 116, 116);
